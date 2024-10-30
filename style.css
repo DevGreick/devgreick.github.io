@@ -62,28 +62,19 @@ header h1 {
     opacity: 0.8;
     overflow: hidden;
     white-space: nowrap;
-    animation: typing 3s steps(30, end) forwards;
-    text-align: center;
+    border-right: 0.15em solid #58a6ff;
+    width: 300px; /* Ajuste a largura para o comprimento exato do texto */
+    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
-/* Cursor separado */
-.typing::after {
-    content: "|";
-    display: inline-block;
-    margin-left: 2px;
-    animation: blink 0.75s step-end infinite;
-    color: #58a6ff;
-}
-
-/* Animação de digitação */
+/* Animação de digitação e piscar do cursor */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
-/* Animação de piscar do cursor */
 @keyframes blink {
-    50% { opacity: 0; }
+    50% { border-color: transparent; }
 }
 
 /* Container e seções */
