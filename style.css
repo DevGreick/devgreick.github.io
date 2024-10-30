@@ -18,14 +18,14 @@ nav {
     top: 0;
     width: 100%;
     background-color: rgba(13, 17, 23, 0.9);
-    padding: 1em;
+    padding: 0.5em;
     z-index: 10;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 1.5em; /* Reduzido o espaçamento entre itens */
     list-style: none;
 }
 
@@ -42,13 +42,13 @@ nav a:hover {
 /* Estilo do Header */
 .header-content {
     text-align: center;
-    padding: 8em 0 4em;
+    padding: 6em 0 2em; /* Reduzido o espaçamento */
     background: linear-gradient(135deg, #0d1117, #161b22);
     animation: fadeInDown 1.5s ease-out;
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 2.5em; /* Reduzido o tamanho da fonte */
     color: #58a6ff;
     animation: fadeInUp 1.5s ease-out;
 }
@@ -62,24 +62,24 @@ header h1 {
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    width: 100%; /* Força o texto a ocupar a largura total */
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    width: fit-content; /* Ajusta para ocupar apenas o espaço necessário */
     animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
 }
 
 /* Container e seções */
 .container {
-    width: 80%;
+    width: 85%; /* Reduzido para dar mais espaço nas laterais */
     margin: auto;
-    padding: 4em 0;
+    padding: 2em 0; /* Reduzido o espaçamento */
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.8em; /* Reduzido o tamanho da fonte */
     color: #58a6ff;
     border-bottom: 2px solid #58a6ff;
     padding-bottom: 0.3em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em; /* Reduzido o espaçamento inferior */
     animation: fadeInLeft 1.2s ease-in-out;
 }
 
@@ -117,9 +117,9 @@ h2 {
 
 /* Sobre mim, projetos e portfólio */
 .about, .projects, .portfolio, .contact {
-    margin-top: 4em;
+    margin-top: 2em; /* Reduzido o espaçamento superior */
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px); /* Menor deslocamento inicial */
     animation: fadeIn 1.5s ease forwards;
 }
 
@@ -145,7 +145,7 @@ ul li a:hover {
 
 footer {
     text-align: center;
-    padding: 1em 0;
+    padding: 0.5em 0; /* Reduzido o espaçamento */
     background-color: #161b22;
     color: #8b949e;
     font-size: 0.9em;
