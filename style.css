@@ -25,7 +25,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 1.5em; /* Reduzido o espaçamento entre itens */
+    gap: 1.5em;
     list-style: none;
 }
 
@@ -42,17 +42,18 @@ nav a:hover {
 /* Estilo do Header */
 .header-content {
     text-align: center;
-    padding: 6em 0 2em; /* Reduzido o espaçamento */
+    padding: 6em 0 2em;
     background: linear-gradient(135deg, #0d1117, #161b22);
     animation: fadeInDown 1.5s ease-out;
 }
 
 header h1 {
-    font-size: 2.5em; /* Reduzido o tamanho da fonte */
+    font-size: 2.5em;
     color: #58a6ff;
     animation: fadeInUp 1.5s ease-out;
 }
 
+/* Efeito de digitação centralizado */
 .typing {
     display: inline-block;
     font-size: 1.2em;
@@ -62,28 +63,38 @@ header h1 {
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-    width: auto;
+    width: fit-content; /* Ajusta para o tamanho exato do texto */
     text-align: center;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+/* Animação de digitação e piscar do cursor */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
 }
 
 /* Container e seções */
 .container {
-    width: 85%; /* Reduzido para dar mais espaço nas laterais */
+    width: 85%;
     margin: auto;
-    padding: 2em 0; /* Reduzido o espaçamento */
+    padding: 2em 0;
 }
 
 h2 {
-    font-size: 1.8em; /* Reduzido o tamanho da fonte */
+    font-size: 1.8em;
     color: #58a6ff;
     border-bottom: 2px solid #58a6ff;
     padding-bottom: 0.3em;
-    margin-bottom: 0.5em; /* Reduzido o espaçamento inferior */
+    margin-bottom: 0.5em;
     animation: fadeInLeft 1.2s ease-in-out;
 }
 
-/* Animações */
+/* Animações de fade */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -106,20 +117,11 @@ h2 {
     }
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
-}
-
 /* Sobre mim, projetos e portfólio */
 .about, .projects, .portfolio, .contact {
-    margin-top: 2em; /* Reduzido o espaçamento superior */
+    margin-top: 2em;
     opacity: 0;
-    transform: translateY(20px); /* Menor deslocamento inicial */
+    transform: translateY(20px);
     animation: fadeIn 1.5s ease forwards;
 }
 
@@ -143,9 +145,10 @@ ul li a:hover {
     text-shadow: 0 0 10px #58a6ff;
 }
 
+/* Rodapé */
 footer {
     text-align: center;
-    padding: 0.5em 0; /* Reduzido o espaçamento */
+    padding: 0.5em 0;
     background-color: #161b22;
     color: #8b949e;
     font-size: 0.9em;
