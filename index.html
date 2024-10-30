@@ -4,7 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackson Greick - Analista de Cibersegurança</title>
+    <!-- Importação da fonte Orbitron do Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron no body */
+            overflow-x: hidden;
+        }
+
+        /* Barra de navegação fixa */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(13, 17, 23, 0.9);
+            padding: 0.5em;
+            z-index: 10;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+            list-style: none;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1f6feb;
+        }
+
+        /* Estilo do Header */
+        .header-content {
+            text-align: center;
+            padding: 6em 0 2em;
+            background: linear-gradient(135deg, #0d1117, #161b22);
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #58a6ff;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+            animation: fadeInUp 1.5s ease-out;
+            font-weight: 700; /* Peso mais forte */
+        }
+
+        .typing {
+            display: inline-block;
+            font-size: 1.2em;
+            color: #c9d1d9;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+            margin-top: 0.5em;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid #58a6ff;
+            animation: typing 5s steps(100, end), blink 0.75s step-end infinite;
+            width: 45ch; /* Ajuste fino para alinhar o texto ao cursor */
+        }
+
+        /* Animação de digitação */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 45ch; } /* Ajuste fino para o comprimento exato do texto */
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Container e seções */
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 2em 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #58a6ff;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 0.3em;
+            margin-bottom: 0.5em;
+            animation: fadeInLeft 1.2s ease-in-out;
+            font-weight: 700;
+        }
+
+        /* Animações de fade */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sobre mim, projetos e portfólio */
+        .about, .projects, .portfolio, .contact {
+            margin-top: 2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Links de projeto e hover */
+        ul li a {
+            color: #58a6ff;
+            text-decoration: none;
+            position: relative;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+            transition: color 0.3s;
+        }
+
+        ul li a:hover {
+            color: #1f6feb;
+            text-shadow: 0 0 10px #58a6ff;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 0.5em 0;
+            background-color: #161b22;
+            color: #8b949e;
+            font-size: 0.9em;
+            animation: fadeInUp 1s ease-out;
+            font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
+        }
+    </style>
 </head>
 <body>
     <header>
