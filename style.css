@@ -63,14 +63,14 @@ header h1 {
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    width: fit-content;
     animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    max-width: 100%; /* Garante que o texto não se expanda */
 }
 
 /* Animação de digitação */
 @keyframes typing {
     from { width: 0; }
-    to { width: fit-content; }
+    to { width: 100%; }
 }
 
 @keyframes blink {
