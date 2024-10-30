@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 body {
@@ -51,6 +51,7 @@ header h1 {
     font-size: 2.5em;
     color: #58a6ff;
     animation: fadeInUp 1.5s ease-out;
+    font-weight: 700; /* Mais pesado para dar destaque */
 }
 
 .typing {
@@ -89,6 +90,7 @@ h2 {
     padding-bottom: 0.3em;
     margin-bottom: 0.5em;
     animation: fadeInLeft 1.2s ease-in-out;
+    font-weight: 700;
 }
 
 /* Animações de fade */
