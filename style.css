@@ -47,7 +47,7 @@ h2 {
     animation: fadeInLeft 1.2s ease-in-out;
 }
 
-.about, .projects, .contact {
+.about, .projects, .portfolio, .contact {
     margin-top: 2em;
 }
 
