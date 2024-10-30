@@ -59,18 +59,17 @@ header h1 {
     font-size: 1.2em;
     color: #c9d1d9;
     margin-top: 0.5em;
-    opacity: 0.8;
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    animation: typing 4s steps(5, end), blink 0.75s step-end infinite;
-    width: 0; /* Inicia com largura zero */
+    animation: typing 4s steps(45, end), blink 0.75s step-end infinite;
+    width: 30ch; /* Define a largura exata do texto para controlar o cursor */
 }
 
 /* Animação de digitação */
 @keyframes typing {
     from { width: 0; }
-    to { width: 100%; }
+    to { width: 30ch; } /* Limita ao comprimento exato do texto */
 }
 
 @keyframes blink {
