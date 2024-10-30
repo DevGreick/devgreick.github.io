@@ -8,7 +8,7 @@
 body {
     background-color: #0d1117;
     color: #c9d1d9;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron no body */
+    font-family: 'Orbitron', sans-serif;
     overflow-x: hidden;
 }
 
@@ -32,7 +32,6 @@ nav ul {
 nav a {
     color: #58a6ff;
     text-decoration: none;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
     transition: color 0.3s;
 }
 
@@ -46,43 +45,25 @@ nav a:hover {
     padding: 6em 0 2em;
     background: linear-gradient(135deg, #0d1117, #161b22);
     animation: fadeInDown 1.5s ease-out;
-    max-width: 80%; /* Limita a largura máxima do container */
-    margin: 0 auto; /* Centraliza o container */
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 header h1 {
     font-size: 2.5em;
     color: #58a6ff;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
     animation: fadeInUp 1.5s ease-out;
-    font-weight: 700; /* Peso mais forte */
-    max-width: 100%; /* Garante que o título não ultrapasse o container */
-    overflow: hidden; /* Evita overflow do título */
+    font-weight: 700;
 }
 
 .typing {
     display: inline-block;
     font-size: 1.2em;
     color: #c9d1d9;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
     margin-top: 0.5em;
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    animation: typing 5s steps(40, end), blink 0.75s step-end infinite;
-    width: 35ch; /* Ajuste fino para alinhar o texto ao cursor */
-    max-width: 100%; /* Garante que o efeito de digitação não ultrapasse o container */
-    margin: 0 auto; /* Centraliza o efeito de digitação */
-}
-
-/* Animação de digitação */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 45ch; } /* Ajuste fino para o comprimento exato do texto */
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
 }
 
 /* Container e seções */
@@ -95,7 +76,6 @@ header h1 {
 h2 {
     font-size: 1.8em;
     color: #58a6ff;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
     border-bottom: 2px solid #58a6ff;
     padding-bottom: 0.3em;
     margin-bottom: 0.5em;
@@ -146,7 +126,6 @@ ul li a {
     color: #58a6ff;
     text-decoration: none;
     position: relative;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
     transition: color 0.3s;
 }
 
@@ -163,5 +142,4 @@ footer {
     color: #8b949e;
     font-size: 0.9em;
     animation: fadeInUp 1s ease-out;
-    font-family: 'Orbitron', sans-serif; /* Aplicando Orbitron */
 }
