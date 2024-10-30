@@ -59,10 +59,12 @@ header h1 {
     font-size: 1.2em;
     color: #c9d1d9;
     margin-top: 0.5em;
+    opacity: 0.8;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #58a6ff;
+    border-right: 0.15em solid #58a6ff;
     animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+    width: 0; /* Inicia com largura zero */
 }
 
 /* Animação de digitação */
