@@ -53,28 +53,37 @@ header h1 {
     animation: fadeInUp 1.5s ease-out;
 }
 
-/* Efeito de digitação centralizado */
-.typing {
+/* Efeito de digitação */
+.typing-container {
     display: inline-block;
     font-size: 1.2em;
     color: #c9d1d9;
     margin-top: 0.5em;
     opacity: 0.8;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 0.15em solid #58a6ff;
-    width: 300px; /* Ajuste a largura para o comprimento exato do texto */
-    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
-/* Animação de digitação e piscar do cursor */
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end) forwards;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.75s step-end infinite;
+    color: #58a6ff;
+}
+
+/* Animação de digitação */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    50% { opacity: 0; }
 }
 
 /* Container e seções */
