@@ -64,20 +64,13 @@ header h1 {
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-   
+    animation: blink 0.75s steps(1) infinite; /* Animação de piscagem do cursor */
 }
 
-/* Animação de digitação */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Animação do cursor piscando */
+/* Animação de piscagem */
 @keyframes blink {
     50% { border-color: transparent; }
 }
-
 /* Container e seções */
 .container {
     width: 85%;
