@@ -58,16 +58,18 @@ header h1 {
     font-weight: 700;
 }
 
+/* Estilo para o efeito de digitação */
 .typing {
     display: inline-block;
     font-size: 1.2em;
-    color: #ffffff;
+    color: #ffffff !important; 
     margin-top: 0.5em;
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    animation: blink 0.75s steps(1) infinite; /* Animação de piscagem do cursor */
+    animation: blink 0.75s steps(1) infinite;
 }
+
 
 /* Animação de piscagem */
 @keyframes blink {
