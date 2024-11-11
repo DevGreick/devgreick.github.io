@@ -46,9 +46,10 @@ nav a:hover {
     background: radial-gradient(circle, rgba(13, 17, 23, 0.8) 0%, rgba(13, 17, 23, 0.6) 60%, rgba(13, 17, 23, 0) 100%);
     max-width: 80%;
     margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
 }
+
 
 header h1 {
     font-size: 2.5em;
@@ -57,23 +58,21 @@ header h1 {
     font-weight: 700;
 }
 
-/* Estilo para o efeito de digitação */
 .typing {
     display: inline-block;
     font-size: 1.2em;
-    color: #ffffff !important; 
+    color: #c9d1d9;
     margin-top: 0.5em;
     overflow: hidden;
     white-space: nowrap;
     border-right: 0.15em solid #58a6ff;
-    animation: blink 0.75s steps(1) infinite;
+    animation: blink 0.75s steps(1) infinite; /* Animação de piscagem do cursor */
 }
 
 /* Animação de piscagem */
 @keyframes blink {
     50% { border-color: transparent; }
 }
-
 /* Container e seções */
 .container {
     width: 85%;
@@ -92,10 +91,10 @@ h2 {
 }
 
 /* Animações de fade */
-@keyframes fadeIn {
+@keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;
@@ -103,12 +102,30 @@ h2 {
     }
 }
 
-/* Aplica a animação de fade a todas as seções */
-.about, .experience, .skills, .certifications, .projects, .contact {
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sobre mim, projetos e portfólio */
+.about, .projects, .portfolio, .contact {
     margin-top: 2em;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Links de projeto e hover */
@@ -132,31 +149,4 @@ footer {
     color: #8b949e;
     font-size: 0.9em;
     animation: fadeInUp 1s ease-out;
-}
-
-/* Estilos para o modo escuro */
-body.dark-mode {
-    background-color: #161b22;
-    color: #c9d1d9;
-}
-
-body.dark-mode h2, body.dark-mode a, body.dark-mode .typing {
-    color: #58a6ff;
-}
-
-body.dark-mode a:hover {
-    color: #1f6feb;
-}
-
-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #58a6ff;
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
 }
