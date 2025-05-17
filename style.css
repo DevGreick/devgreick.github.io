@@ -81,7 +81,7 @@ header h1 {
 .typing {
     display: inline-block;
     font-size: 1.3em;
-    color: var(--primary-blue) !important;
+    color: var(--accent-cyan) !important; /* Alterado de --primary-blue para --accent-cyan */
     margin-top: 0.7em;
     overflow: hidden;
     white-space: nowrap;
