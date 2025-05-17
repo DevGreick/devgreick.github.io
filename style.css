@@ -71,7 +71,7 @@ header h1 {
         0 0 20px var(--clr-accent),
         0 0 30px var(--clr-accent);
     letter-spacing: 2px;
-    opacity: 0; /* Estado inicial para fadeInUp */
+    opacity: 0;
 }
 
 @keyframes flickerText {
@@ -112,18 +112,25 @@ header h1 {
     50% { border-color: transparent; }
 }
 
-.container {
-    width: 85%;
-    margin: 2em auto;
-    padding: 0;
+.container { /* Este .container é o que está DENTRO das suas seções */
+    width: 100%; /* Ajustado para o contexto interno da seção */
+    /* margin: 2em auto; Removido, pois a seção controla sua margem */
+    /* padding: 0;  Removido, pois a seção controla seu padding */
 }
 
-.container > section {
+/* Seletor corrigido para as seções de conteúdo */
+section.about,
+section.skills,
+section.certifications,
+section.projects,
+section.contact {
     background-color: var(--clr-panel-bg);
     border: 1px solid var(--clr-panel-border);
     border-radius: 0;
     padding: 1.5em 2em;
-    margin-bottom: 3em;
+    margin: 2em auto 3em auto; /* Centraliza e adiciona margem superior/inferior */
+    width: 85%; /* Define a largura da seção */
+    max-width: 960px; /* Opcional: uma largura máxima */
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.1), 0 0 30px rgba(0, 255, 255, 0.05);
     opacity: 0;
     transform: translateY(30px);
@@ -133,12 +140,20 @@ header h1 {
     overflow: visible;
 }
 
-.container > section:hover {
+section.about:hover,
+section.skills:hover,
+section.certifications:hover,
+section.projects:hover,
+section.contact:hover {
     background-color: var(--clr-panel-bg-hover);
     border-color: var(--clr-panel-border-strong);
 }
 
-.container > section::before {
+section.about::before,
+section.skills::before,
+section.certifications::before,
+section.projects::before,
+section.contact::before {
     content: '';
     position: absolute;
     top: -1px;
@@ -155,7 +170,11 @@ header h1 {
     pointer-events: auto;
 }
 
-.container > section::after {
+section.about::after,
+section.skills::after,
+section.certifications::after,
+section.projects::after,
+section.contact::after {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -177,8 +196,9 @@ h2 {
     text-shadow: 0 0 8px var(--clr-glow-accent);
     display: inline-block;
     position: relative;
-    opacity: 0; /* Estado inicial para fadeInLeft */
-    animation: fadeInLeft 1.2s ease-in-out forwards; /* Animação restaurada */
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-in-out forwards;
+    animation-delay: 0.5s; /* Pequeno delay para h2 aparecer após a seção */
 }
 
 h2::after {
@@ -256,7 +276,6 @@ button.dark-mode-toggle:hover {
 }
 .contact a:hover img { transform: scale(1.1); }
 
-/* Definições de @keyframes globais */
 @keyframes fadeInPanel { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
@@ -277,10 +296,10 @@ body.light-mode .header-content::before {
 
 body.light-mode header h1 {
     color: var(--clr-text-lm);
-    animation: fadeInUp 1.5s ease-out forwards; /* Mantém fadeInUp, remove flickerText */
+    animation: fadeInUp 1.5s ease-out forwards;
     text-shadow: none;
     letter-spacing: 1px;
-    opacity: 0; /* Estado inicial para fadeInUp */
+    opacity: 0;
 }
 
 body.light-mode .typing {
@@ -295,45 +314,42 @@ body.light-mode .typing {
     50% { border-color: transparent; }
 }
 
-body.light-mode .container > section {
+body.light-mode section.about,
+body.light-mode section.skills,
+body.light-mode section.certifications,
+body.light-mode section.projects,
+body.light-mode section.contact {
     background-color: var(--clr-panel-bg-lm);
     border: 1px solid var(--clr-panel-border-lm);
     box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    border-radius: 0;
-    overflow: visible;
     animation: fadeInPanel 1.5s ease forwards; /* Mantém animação de entrada */
     opacity: 0; /* Estado inicial para fadeInPanel */
 }
 
-body.light-mode .container > section:hover {
+body.light-mode section.about:hover,
+body.light-mode section.skills:hover,
+body.light-mode section.certifications:hover,
+body.light-mode section.projects:hover,
+body.light-mode section.contact:hover {
     background-color: #f8f9fa;
     border-color: #ced4da;
 }
 
-body.light-mode .container > section::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    width: 25px;
-    height: 25px;
+body.light-mode section.about::before,
+body.light-mode section.skills::before,
+body.light-mode section.certifications::before,
+body.light-mode section.projects::before,
+body.light-mode section.contact::before {
     border-top: 2px solid var(--clr-accent-lm);
     border-left: 2px solid var(--clr-accent-lm);
     box-shadow: none;
-    background: none;
-    animation: none;
-    opacity: 1;
-    transition: none;
-    pointer-events: auto;
 }
 
-body.light-mode .container > section::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    right: -1px;
-    width: 25px;
-    height: 25px;
+body.light-mode section.about::after,
+body.light-mode section.skills::after,
+body.light-mode section.certifications::after,
+body.light-mode section.projects::after,
+body.light-mode section.contact::after {
     border-bottom: 2px solid var(--clr-accent-lm);
     border-right: 2px solid var(--clr-accent-lm);
     box-shadow: none;
@@ -343,8 +359,9 @@ body.light-mode h2 {
     color: var(--clr-accent-lm);
     border-bottom: 2px solid var(--clr-accent-lm);
     text-shadow: none;
-    animation: fadeInLeft 1.2s ease-in-out forwards; /* Animação restaurada */
-    opacity: 0; /* Estado inicial para fadeInLeft */
+    animation: fadeInLeft 1.2s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
 }
 
 body.light-mode h2::after {
