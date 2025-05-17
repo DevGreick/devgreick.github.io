@@ -89,11 +89,12 @@ header h1 {
     text-shadow: 0 0 5px var(--glow-accent);
     border-right: 0.15em solid var(--accent-cyan);
     animation: blink 0.75s steps(1) infinite;
-    background: transparent;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-    padding: 0;
+    background: transparent !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 @keyframes blink {
