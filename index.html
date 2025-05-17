@@ -1,3 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Greick - Network Security Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌞/🌙</button>
+
+    <header class="header-content">
+        <h1>Jackson Greick</h1>
+        <p class="typing" id="typing-text"></p>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p>Atualmente analista de cibersegurança na NTT DATA, me destaco em mitigação de vulnerabilidades, monitoramento de riscos e desenvolvimento de automações inovadoras, minha paixão por privacidade e segurança inspira a busca constante por soluções avançadas, assegurando a integridade e a confidencialidade dos dados corporativos, com uma abordagem estratégica, antecipo ameaças emergentes e implemento proteções robustas, meu compromisso em proteger o futuro digital, aliado a uma sólida expertise, faz de mim um profissional proativo para resolução de problemas..</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li><strong>Administração de Sistemas:</strong> Active Directory, DHCP, DNS, SD-WAN, WiFi, VoIP.</li>
+                <li><strong>Monitoramento e Tracing:</strong> Zabbix, Grafana, Wireshark.</li>
+                <li><strong>Sistemas Operacionais:</strong> Windows Server, Ubuntu Server, CentOS, Red Hat, Kali.</li>
+                <li><strong>Automação:</strong> Docker, Kubernetes.</li>
+                <li><strong>Segurança e Firewalls:</strong> Checkpoint, Fortinet, Cisco ASA.</li>
+                <li><strong>Programação:</strong> Python, Javascript, Rust, Go.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2>Certificações</h2>
+            <ul>
+                <li>Linux Professional Institute (LPIC-1) <a href="https://cs.lpi.org/caf/Xamman/certification/verify/LPI000400974/pn9farhwgj" target="_blank">(Ver Certificação)</a></li>
+                <li>Fortinet Network Security Expert (NSE 1 a 4)</li>
+                <li>Google Cloud Professional (ACE)</li>
+                <li>DevOps Essentials Professional (DEPC™)</li>
+                <li>Credly <a href="https://www.credly.com/users/jackson-greick.efcd7314" target="_blank">(Ver certificações)</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projetos Recentes</h2>
+            <ul>
+                <li><a href="https://github.com/DevGreick/Vtotalscan">Projeto de Monitoramento de Vulnerabilidades IPDBSCAN</a> - Solução para identificar e gerenciar vulnerabilidades em tempo real.</li>
+                <li><a href="https://noticias.assistentecyber.com/">Notícias sobre CVEs</a> - Site dedicado a informações atualizadas sobre vulnerabilidades e segurança.</li>
+                <li><a href="https://forgejo.assistentecyber.com/devgreick">GIT</a> - Git pessoal.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>
+                <a href="https://www.linkedin.com/in/jacksongreick/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" width="24" height="24">
+                    LinkedIn
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Jackson Greick</p>
+        </div>
+    </footer>
+
 <script>
 const text = "Analista de Cibersegurança e Entusiasta de Privacidade";
 const typingText = document.getElementById("typing-text");
@@ -16,11 +96,11 @@ function setInitialTheme() {
     if (preferredTheme === 'light') {
         document.body.classList.add('light-mode');
     } else {
-        document.body.classList.remove('light-mode'); 
+        document.body.classList.remove('light-mode');
     }
 }
 
-function toggleDarkMode() { 
+function toggleDarkMode() {
     document.body.classList.toggle('light-mode');
     if (document.body.classList.contains('light-mode')) {
         localStorage.setItem('theme', 'light');
@@ -34,3 +114,5 @@ window.onload = () => {
     setInitialTheme();
 };
 </script>
+</body>
+</html>
