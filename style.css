@@ -112,13 +112,10 @@ header h1 {
     50% { border-color: transparent; }
 }
 
-.container { /* Este .container é o que está DENTRO das suas seções */
-    width: 100%; /* Ajustado para o contexto interno da seção */
-    /* margin: 2em auto; Removido, pois a seção controla sua margem */
-    /* padding: 0;  Removido, pois a seção controla seu padding */
+.container {
+    width: 100%;
 }
 
-/* Seletor corrigido para as seções de conteúdo */
 section.about,
 section.skills,
 section.certifications,
@@ -126,18 +123,18 @@ section.projects,
 section.contact {
     background-color: var(--clr-panel-bg);
     border: 1px solid var(--clr-panel-border);
-    border-radius: 0;
+    border-radius: 8px; /* Restaurado border-radius */
     padding: 1.5em 2em;
-    margin: 2em auto 3em auto; /* Centraliza e adiciona margem superior/inferior */
-    width: 85%; /* Define a largura da seção */
-    max-width: 960px; /* Opcional: uma largura máxima */
+    margin: 2em auto 2.5em auto; /* Ajustado margin-bottom */
+    width: 85%;
+    max-width: 960px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.1), 0 0 30px rgba(0, 255, 255, 0.05);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInPanel 1.5s ease forwards;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
     position: relative;
-    overflow: visible;
+    overflow: hidden; /* Restaurado para hidden com border-radius */
 }
 
 section.about:hover,
@@ -149,42 +146,7 @@ section.contact:hover {
     border-color: var(--clr-panel-border-strong);
 }
 
-section.about::before,
-section.skills::before,
-section.certifications::before,
-section.projects::before,
-section.contact::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    width: 25px;
-    height: 25px;
-    border-top: 2px solid var(--clr-accent);
-    border-left: 2px solid var(--clr-accent);
-    box-shadow: 0 0 10px var(--clr-glow-accent);
-    background: none;
-    animation: none;
-    opacity: 1;
-    transition: none;
-    pointer-events: auto;
-}
-
-section.about::after,
-section.skills::after,
-section.certifications::after,
-section.projects::after,
-section.contact::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    right: -1px;
-    width: 25px;
-    height: 25px;
-    border-bottom: 2px solid var(--clr-accent);
-    border-right: 2px solid var(--clr-accent);
-    box-shadow: 0 0 10px var(--clr-glow-accent);
-}
+/* Removidos ::before e ::after que criavam os cantos das seções */
 
 h2 {
     font-size: 1.9em;
@@ -198,7 +160,7 @@ h2 {
     position: relative;
     opacity: 0;
     animation: fadeInLeft 1.2s ease-in-out forwards;
-    animation-delay: 0.5s; /* Pequeno delay para h2 aparecer após a seção */
+    animation-delay: 0.5s;
 }
 
 h2::after {
@@ -281,8 +243,6 @@ button.dark-mode-toggle:hover {
 @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes scanline { from { background-position: 0 0; } to { background-position: 0 -60px; } }
 
-
-/* --- ESTILOS DO MODO CLARO (ATIVADO PELA CLASSE .light-mode) --- */
 body.light-mode {
     background-color: var(--clr-bg-lm);
     color: var(--clr-text-lm);
@@ -322,8 +282,10 @@ body.light-mode section.contact {
     background-color: var(--clr-panel-bg-lm);
     border: 1px solid var(--clr-panel-border-lm);
     box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    animation: fadeInPanel 1.5s ease forwards; /* Mantém animação de entrada */
-    opacity: 0; /* Estado inicial para fadeInPanel */
+    border-radius: 8px; /* Restaurado border-radius */
+    overflow: hidden; /* Restaurado para hidden */
+    animation: fadeInPanel 1.5s ease forwards;
+    opacity: 0;
 }
 
 body.light-mode section.about:hover,
@@ -335,25 +297,7 @@ body.light-mode section.contact:hover {
     border-color: #ced4da;
 }
 
-body.light-mode section.about::before,
-body.light-mode section.skills::before,
-body.light-mode section.certifications::before,
-body.light-mode section.projects::before,
-body.light-mode section.contact::before {
-    border-top: 2px solid var(--clr-accent-lm);
-    border-left: 2px solid var(--clr-accent-lm);
-    box-shadow: none;
-}
-
-body.light-mode section.about::after,
-body.light-mode section.skills::after,
-body.light-mode section.certifications::after,
-body.light-mode section.projects::after,
-body.light-mode section.contact::after {
-    border-bottom: 2px solid var(--clr-accent-lm);
-    border-right: 2px solid var(--clr-accent-lm);
-    box-shadow: none;
-}
+/* Removidos ::before e ::after que criavam os cantos das seções no modo claro */
 
 body.light-mode h2 {
     color: var(--clr-accent-lm);
