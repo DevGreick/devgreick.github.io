@@ -8,25 +8,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
 </head>
 <body>
-    <!-- Botão para alternância de modo claro/escuro -->
-    <button onclick="toggleDarkMode()">🌞/🌙</button>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌞/🌙</button>
 
-    <!-- Cabeçalho principal com título e animação -->
     <header class="header-content">
-        <h1>Jackson Greick</h1>
+        <h1 class="glitch-hover">Jackson Greick</h1>
         <p class="typing" id="typing-text"></p>
     </header>
 
- 
-    <section id="about" class="about">
-        <div class="container">
+    <div class="container">
+        <section id="about" class="about">
             <h2>Sobre Mim</h2>
             <p>Atualmente analista de cibersegurança na NTT DATA, me destaco em mitigação de vulnerabilidades, monitoramento de riscos e desenvolvimento de automações inovadoras, minha paixão por privacidade e segurança inspira a busca constante por soluções avançadas, assegurando a integridade e a confidencialidade dos dados corporativos, com uma abordagem estratégica, antecipo ameaças emergentes e implemento proteções robustas, meu compromisso em proteger o futuro digital, aliado a uma sólida expertise, faz de mim um profissional proativo para resolução de problemas..</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
+        <section id="skills" class="skills">
             <h2>Habilidades Técnicas</h2>
             <ul>
                 <li><strong>Administração de Sistemas:</strong> Active Directory, DHCP, DNS, SD-WAN, WiFi, VoIP.</li>
@@ -36,11 +31,9 @@
                 <li><strong>Segurança e Firewalls:</strong> Checkpoint, Fortinet, Cisco ASA.</li>
                 <li><strong>Programação:</strong> Python, Javascript, Rust, Go.</li>
             </ul>
-        </div>
-    </section>
-   
-    <section id="certifications" class="certifications">
-        <div class="container">
+        </section>
+
+        <section id="certifications" class="certifications">
             <h2>Certificações</h2>
             <ul>
                 <li>Linux Professional Institute (LPIC-1) <a href="https://cs.lpi.org/caf/Xamman/certification/verify/LPI000400974/pn9farhwgj" target="_blank">(Ver Certificação)</a></li>
@@ -49,33 +42,27 @@
                 <li>DevOps Essentials Professional (DEPC™)</li>
                 <li>Credly <a href="https://www.credly.com/users/jackson-greick.efcd7314" target="_blank">(Ver certificações)</a></li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
+        <section id="projects" class="projects">
             <h2>Projetos Recentes</h2>
             <ul>
                 <li><a href="https://github.com/DevGreick/Vtotalscan">Projeto de Monitoramento de Vulnerabilidades IPDBSCAN</a> - Solução para identificar e gerenciar vulnerabilidades em tempo real.</li>
                 <li><a href="https://noticias.assistentecyber.com/">Notícias sobre CVEs</a> - Site dedicado a informações atualizadas sobre vulnerabilidades e segurança.</li>
                 <li><a href="https://forgejo.assistentecyber.com/devgreick">GIT</a> - Git pessoal.</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
+        <section id="contact" class="contact">
             <h2>Contato</h2>
-           
             <p>
                 <a href="https://www.linkedin.com/in/jacksongreick/" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" width="24" height="24">
                     LinkedIn
                 </a>
             </p>
-          
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
         <div class="container">
@@ -83,9 +70,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript para alternância de modo claro/escuro e efeito de digitação -->
     <script>
-        // Efeito de digitação
         const text = "Analista de Cibersegurança e Entusiasta de Privacidade";
         const typingText = document.getElementById("typing-text");
         let index = 0;
@@ -100,41 +85,9 @@
 
         window.onload = typeWriter;
 
-        // Alternância de modo claro/escuro
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
     </script>
-
-    <!-- CSS para o modo escuro -->
-    <style>
-        /* Estilo para o modo escuro */
-        body.dark-mode {
-            background-color: #161b22;
-            color: #c9d1d9;
-        }
-
-        /* Outros estilos para melhorar a visibilidade no modo escuro */
-        h2, a, .typing {
-            color: #58a6ff;
-        }
-
-        a:hover {
-            color: #1f6feb;
-        }
-
-        button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #58a6ff;
-            color: #ffffff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-    </style>
 </body>
 </html>
