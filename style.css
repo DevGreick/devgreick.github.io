@@ -85,10 +85,15 @@ header h1 {
     margin-top: 0.7em;
     overflow: hidden;
     white-space: nowrap;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--glow-accent);
     border-right: 0.15em solid var(--accent-cyan);
     animation: blink 0.75s steps(1) infinite;
-    text-shadow: 0 0 5px var(--glow-accent);
-    letter-spacing: 1px;
+    background: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    padding: 0;
 }
 
 @keyframes blink {
