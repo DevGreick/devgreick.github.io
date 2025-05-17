@@ -1,14 +1,27 @@
 :root {
-    --bg-dark: #03070a;
-    --bg-panel: rgba(10, 25, 40, 0.6);
-    --bg-panel-hover: rgba(15, 35, 55, 0.8);
-    --primary-blue: #58a6ff;
-    --accent-cyan: #00ffff;
-    --text-color: #c9d1d9;
-    --border-color: rgba(0, 255, 255, 0.3);
-    --border-strong-color: rgba(0, 255, 255, 0.7);
-    --glow-primary: rgba(88, 166, 255, 0.7);
-    --glow-accent: rgba(0, 255, 255, 0.7);
+    /* Variáveis Globais e do Modo Claro */
+    --font-primary: 'Orbitron', sans-serif;
+
+    /* Cores Modo Claro */
+    --clr-bg-light: #f0f4f8;
+    --clr-text-light: #212529;
+    --clr-panel-bg-light: #ffffff;
+    --clr-panel-border-light: #dee2e6;
+    --clr-primary-light: #007bff;
+    --clr-accent-light: #0056b3; /* Um azul mais escuro para contraste */
+    --clr-subtle-border-light: rgba(0, 0, 0, 0.1);
+
+    /* Cores Modo Escuro (Cyber Interface) */
+    --clr-bg-dark: #03070a;
+    --clr-text-dark: #c9d1d9;
+    --clr-panel-bg-dark: rgba(10, 25, 40, 0.6);
+    --clr-panel-bg-hover-dark: rgba(15, 35, 55, 0.8);
+    --clr-panel-border-dark: rgba(0, 255, 255, 0.3);
+    --clr-panel-border-strong-dark: rgba(0, 255, 255, 0.7);
+    --clr-primary-dark: #58a6ff;
+    --clr-accent-dark: #00ffff;
+    --clr-glow-primary-dark: rgba(88, 166, 255, 0.7);
+    --clr-glow-accent-dark: rgba(0, 255, 255, 0.7);
 }
 
 * {
@@ -17,15 +30,13 @@
     box-sizing: border-box;
 }
 
+/* --- ESTILOS BASE (MODO CLARO) --- */
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-color);
-    font-family: 'Orbitron', sans-serif;
+    background-color: var(--clr-bg-light);
+    color: var(--clr-text-light);
+    font-family: var(--font-primary);
     overflow-x: hidden;
-    background-image:
-        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .header-content {
@@ -36,59 +47,24 @@ body {
     position: relative;
 }
 
-.header-content::before {
-    content: '';
-    position: absolute;
-    top: 2em;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-    opacity: 0.6;
-}
-
 header h1 {
     font-size: 3em;
-    color: var(--text-color);
+    color: var(--clr-text-light);
     font-weight: 700;
-    animation: flickerText 3s infinite alternate, fadeInUp 1.5s ease-out;
-    text-shadow:
-        0 0 5px var(--glow-primary),
-        0 0 10px var(--glow-primary),
-        0 0 20px var(--accent-cyan),
-        0 0 30px var(--accent-cyan);
-    letter-spacing: 2px;
-}
-
-@keyframes flickerText {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        text-shadow:
-        0 0 5px var(--glow-primary),
-        0 0 10px var(--glow-primary),
-        0 0 20px var(--accent-cyan),
-        0 0 30px var(--accent-cyan),
-        0 0 40px var(--accent-cyan),
-        0 0 50px var(--primary-blue);
-        opacity: 1;
-    }
-    20%, 24%, 55% {
-        text-shadow: none;
-        opacity: 0.6;
-    }
+    letter-spacing: 1px;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .typing {
     display: inline-block;
     font-size: 1.3em;
-    color: var(--accent-cyan) !important; /* Alterado de --primary-blue para --accent-cyan */
+    color: var(--clr-primary-light) !important;
     margin-top: 0.7em;
     overflow: hidden;
     white-space: nowrap;
     letter-spacing: 1px;
-    text-shadow: 0 0 5px var(--glow-accent);
-    border-right: 0.15em solid var(--accent-cyan);
-    animation: blink 0.75s steps(1) infinite;
+    border-right: 0.15em solid var(--clr-accent-light);
+    animation: blinkLight 0.75s steps(1) infinite;
     background: transparent !important;
     border-top: none !important;
     border-bottom: none !important;
@@ -97,8 +73,8 @@ header h1 {
     box-shadow: none !important;
 }
 
-@keyframes blink {
-    0%, 100% { border-color: var(--accent-cyan); box-shadow: 0 0 8px var(--glow-accent); }
+@keyframes blinkLight {
+    0%, 100% { border-color: var(--clr-accent-light); }
     50% { border-color: transparent; }
 }
 
@@ -109,27 +85,187 @@ header h1 {
 }
 
 .container > section {
-    background-color: var(--bg-panel);
-    border: 1px solid var(--border-color);
+    background-color: var(--clr-panel-bg-light);
+    border: 1px solid var(--clr-panel-border-light);
     border-radius: 8px;
     padding: 1.5em 2em;
     margin-bottom: 2.5em;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1), 0 0 30px rgba(0, 255, 255, 0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInPanel 1.5s ease forwards;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 
-.container > section:hover {
-    background-color: var(--bg-panel-hover);
-    border-color: var(--border-strong-color);
+h2 {
+    font-size: 1.9em;
+    color: var(--clr-accent-light);
+    border-bottom: 2px solid var(--clr-accent-light);
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 0.4em 0;
+    border-bottom: 1px dashed var(--clr-subtle-border-light);
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li a {
+    color: var(--clr-primary-light);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: var(--clr-accent-light);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+    color: var(--clr-text-light);
+    font-size: 0.9em;
+    margin-top: 2em;
+    border-top: 1px solid var(--clr-panel-border-light);
+}
+
+button.dark-mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: var(--clr-panel-bg-light);
+    color: var(--clr-primary-light);
+    border: 1px solid var(--clr-panel-border-light);
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-primary);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, border-color 0.3s;
+    z-index: 20;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button.dark-mode-toggle:hover {
+    background-color: var(--clr-primary-light);
+    color: #fff;
+    border-color: var(--clr-primary-light);
+}
+
+.contact img {
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+.contact a:hover img {
+    transform: scale(1.1);
+}
+
+@keyframes fadeInPanel { /* Mantida, pois é genérica */
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp { /* Mantida */
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft { /* Mantida */
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* --- ESTILOS DO MODO ESCURO (CYBER INTERFACE) --- */
+body.dark-mode {
+    background-color: var(--clr-bg-dark);
+    color: var(--clr-text-dark);
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+body.dark-mode .header-content::before {
+    content: '';
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--clr-accent-dark), transparent);
+    opacity: 0.6;
+}
+
+body.dark-mode header h1 {
+    color: var(--clr-text-dark);
+    animation: flickerText 3s infinite alternate, fadeInUp 1.5s ease-out; /* Re-adiciona flickerText no dark mode */
+    text-shadow:
+        0 0 5px var(--clr-glow-primary-dark),
+        0 0 10px var(--clr-glow-primary-dark),
+        0 0 20px var(--clr-accent-dark),
+        0 0 30px var(--clr-accent-dark);
+    letter-spacing: 2px;
+}
+
+@keyframes flickerText { /* Definida aqui para o escopo do dark-mode se necessário, ou globalmente se só usada no dark mode */
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+        0 0 5px var(--clr-glow-primary-dark),
+        0 0 10px var(--clr-glow-primary-dark),
+        0 0 20px var(--clr-accent-dark),
+        0 0 30px var(--clr-accent-dark),
+        0 0 40px var(--clr-accent-dark),
+        0 0 50px var(--clr-primary-dark);
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0.6;
+    }
+}
+
+body.dark-mode .typing {
+    color: var(--clr-accent-dark) !important;
+    text-shadow: 0 0 5px var(--clr-glow-accent-dark);
+    border-right-color: var(--clr-accent-dark);
+    animation: blinkDark 0.75s steps(1) infinite;
+}
+
+@keyframes blinkDark {
+    0%, 100% { border-color: var(--clr-accent-dark); box-shadow: 0 0 8px var(--clr-glow-accent-dark); }
+    50% { border-color: transparent; }
+}
+
+body.dark-mode .container > section {
+    background-color: var(--clr-panel-bg-dark);
+    border: 1px solid var(--clr-panel-border-dark);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1), 0 0 30px rgba(0, 255, 255, 0.05);
+    position: relative; /* Garante que position:relative esteja aqui para o ::before */
+    overflow: hidden; /* Garante que overflow:hidden esteja aqui para o ::before */
+}
+
+body.dark-mode .container > section:hover {
+    background-color: var(--clr-panel-bg-hover-dark);
+    border-color: var(--clr-panel-border-strong-dark);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.1);
 }
 
-.container > section::before {
+body.dark-mode .container > section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -144,134 +280,66 @@ header h1 {
     pointer-events: none;
 }
 
-.container > section:hover::before {
+body.dark-mode .container > section:hover::before {
     opacity: 1;
 }
 
-@keyframes scanline {
+@keyframes scanline { /* Definida aqui ou globalmente */
     0% { background-position: 0 0; }
     100% { background-position: 0 -60px; }
 }
 
-
-@keyframes fadeInPanel {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+body.dark-mode h2 {
+    color: var(--clr-accent-dark);
+    border-bottom: 2px solid var(--clr-panel-border-strong-dark);
+    text-shadow: 0 0 8px var(--clr-glow-accent-dark);
 }
 
-h2 {
-    font-size: 1.9em;
-    color: var(--accent-cyan);
-    border-bottom: 2px solid var(--border-strong-color);
-    padding-bottom: 0.4em;
-    margin-bottom: 1em;
-    font-weight: 700;
-    text-shadow: 0 0 8px var(--glow-accent);
-    display: inline-block;
-    position: relative;
-}
-
-h2::after {
+body.dark-mode h2::after {
     content: ' //';
-    color: var(--primary-blue);
+    color: var(--clr-primary-dark);
     font-size: 0.8em;
     opacity: 0.7;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-ul li {
-    padding: 0.4em 0;
+body.dark-mode ul li {
     border-bottom: 1px dashed rgba(88, 166, 255, 0.2);
-    transition: background-color 0.3s;
 }
 
-ul li:last-child {
+body.dark-mode ul li:last-child {
     border-bottom: none;
 }
 
-ul li a {
-    color: var(--primary-blue);
-    text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s, letter-spacing 0.3s;
-    display: inline-block;
+body.dark-mode ul li a {
+    color: var(--clr-primary-dark);
 }
 
-ul li a:hover {
-    color: var(--accent-cyan);
-    text-shadow: 0 0 10px var(--glow-accent);
+body.dark-mode ul li a:hover {
+    color: var(--clr-accent-dark);
+    text-shadow: 0 0 10px var(--clr-glow-accent-dark);
     letter-spacing: 0.5px;
 }
 
-.certifications a, .projects a {
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5em 0;
+body.dark-mode footer {
     background-color: transparent;
-    color: var(--text-color);
-    font-size: 0.9em;
-    margin-top: 2em;
-    border-top: 1px solid var(--border-color);
-    text-shadow: 0 0 3px var(--glow-primary);
+    color: var(--clr-text-dark);
+    border-top: 1px solid var(--clr-panel-border-dark);
+    text-shadow: 0 0 3px var(--clr-glow-primary-dark);
 }
 
-button.dark-mode-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background-color: var(--bg-panel);
-    color: var(--primary-blue);
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Orbitron', sans-serif;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, border-color 0.3s;
-    z-index: 20;
+body.dark-mode button.dark-mode-toggle {
+    background-color: var(--clr-panel-bg-dark);
+    color: var(--clr-primary-dark);
+    border: 1px solid var(--clr-panel-border-dark);
 }
 
-button.dark-mode-toggle:hover {
-    background-color: var(--primary-blue);
-    color: var(--bg-dark);
-    box-shadow: 0 0 10px var(--glow-primary);
-    border-color: var(--primary-blue);
+body.dark-mode button.dark-mode-toggle:hover {
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-bg-dark);
+    box-shadow: 0 0 10px var(--clr-glow-primary-dark);
+    border-color: var(--clr-primary-dark);
 }
 
-body.dark-mode {
-
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-.contact img {
-    vertical-align: middle;
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 3px var(--glow-primary));
-    transition: transform 0.3s;
-}
-.contact a:hover img {
-    transform: scale(1.1);
+body.dark-mode .contact img {
+    filter: drop-shadow(0 0 3px var(--clr-glow-primary-dark));
 }
